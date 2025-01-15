@@ -1,5 +1,7 @@
 # Codeless Heatmap Calendar
 
+![Preview](doc/images/preview-001.jpg)
+
 **Codeless Heatmap Calendar** is a **full-featured Obsidian plugin** that generates a highly customizable heatmap calendar using data from the Toggl API. Whether you're tracking time, visualizing productivity, or testing with fake data, this plugin offers a seamless and intuitive experience. It’s designed for users who want **complete control** over their heatmap’s appearance and functionality.
 
 ---
