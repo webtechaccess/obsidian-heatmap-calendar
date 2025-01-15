@@ -43,14 +43,15 @@
 
 ## Usage
 
-### Step 1: Configure the Plugin
+### Step 1: Insert a Heatmap Calendar
+1. Open the **Command Palette** in Obsidian by pressing `Ctrl+P` (or `Cmd+P` on macOS).
+2. Search for and select **"Codeless Heatmap Calendar: Insert"**.
+3. A new instance of the heatmap calendar will be inserted into your note.
+
+### Step 2: Configure the Plugin
 1. Open the **Settings** modal in Obsidian.
 2. Navigate to the **Codeless Heatmap Calendar** settings tab.
 3. Configure the plugin using the **Query**, **Style**, **Billable**, and **Stats** tabs to tailor the heatmap to your needs.
-
-### Step 2: Add a Heatmap Calendar to Your Notes
-1. Use the command palette or a DataviewJS block to insert the heatmap calendar into your note.
-2. Customize the heatmap further by adjusting settings for each instance.
 
 ---
 
