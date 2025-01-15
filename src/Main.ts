@@ -61,14 +61,15 @@ export default class Main extends Plugin {
           [Config.CELL_SIZE]: General[Config.CELL_SIZE],
           [Config.LINE_HEIGHT]: General[Config.LINE_HEIGHT],
 
-          [Config.CALENDAR_BACKGROUND]: 'linear-gradient(to bottom right, #200a, #002a)',
-          [Config.CALENDAR_TEXT_COLOR]: '#fff',
-          [Config.NORMAL_DAY_BACKGROUND]: '#222',
-          [Config.OFF_DAY_BACKGROUND]: '#444',
-          [Config.STATISTICS_COLOR]: '#ddd',
-          [Config.BILLABLE_REPORT_COLOR]: '#fff',
-          [Config.TOOLTIP_BACKGROUND]: '#fff',
-          [Config.TOOLTIP_TEXT_COLOR]: '#000',
+          [Config.CALENDAR_BACKGROUND]: 'linear-gradient(to bottom right, #111, #272727)',
+          [Config.CALENDAR_TEXT_COLOR]: '#ddd',
+          [Config.CALENDAR_BORDER_COLOR]: '#333',
+          [Config.NORMAL_DAY_BACKGROUND]: '#444',
+          [Config.OFF_DAY_BACKGROUND]: '#2a2a2a',
+          [Config.STATISTICS_COLOR]: 'white',
+          [Config.BILLABLE_REPORT_COLOR]: 'white',
+          [Config.TOOLTIP_BACKGROUND]: 'white',
+          [Config.TOOLTIP_TEXT_COLOR]: 'black',
         }
 
         initialParams['id'] = Helper.generateHex(32)

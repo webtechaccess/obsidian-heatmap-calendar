@@ -1,6 +1,6 @@
 {
 	"name": "codeless-heatmap-calendar",
-	"version": "0.1.35",
+	"version": "0.1.36",
 	"description": "Codeless heatmap calendar using your Toggl data. Packed with features and a comprehensive roadmap ahead. Customize it with instance-specific settings.",
 	"main": "main.js",
 	"scripts": {
