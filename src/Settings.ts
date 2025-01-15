@@ -197,7 +197,7 @@ export class Settings extends Modal {
     donationEl.innerHTML = "<span style='font-size: 100px; display: block; text-align: center'>💖</span><p>If you’ve enjoyed using this heatmap calendar or found it helpful, consider contributing to its development.</p><p>Your gift will help me improve features, fix bugs, and keep this project alive for the community.</p><p>Every contribution, is greatly appreciated!</p><ul><li>One-Time Donation: <a href='https://buy.stripe.com/00gaEM1lA7yF664fYY'>Donate via Stripe</a></li><li>Monthly Subscription: <a href='https://buy.stripe.com/14kbIQc0ebOVgKI9AB'>Subscribe via Stripe</a></li></ul>"
     tabDonation.append(donationEl)
 
-    this.showTab(4);
+    this.showTab(0);
 
     this.makeMovable(this.modalEl, header);
   }
