@@ -1,0 +1,11 @@
+{
+	"id": "codeless-heatmap-calendar",
+	"name": "Codeless Heatmap Calendar",
+	"version": "0.1.35",
+	"minAppVersion": "0.15.0",
+	"description": "Fully-featured activity visualizer powered by Toggl data and more.",
+	"author": "Behnam Aghajani <behnam.a@gmail.com>",
+	"authorUrl": "https://github.com/webtechaccess",
+	"fundingUrl": "https://buy.stripe.com/00gaEM1lA7yF664fYY",
+	"isDesktopOnly": false
+}

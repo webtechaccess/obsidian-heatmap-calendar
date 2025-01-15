@@ -1,0 +1,28 @@
+{
+	"name": "codeless-heatmap-calendar",
+	"version": "1.00",
+	"description": "Codeless heatmap calendar using your Toggl data. Packed with features and a comprehensive roadmap ahead. Customize it with instance-specific settings.",
+	"main": "main.js",
+	"scripts": {
+    "dev": "concurrently \"npm run watch:css\" \"node esbuild.config.mjs\"",
+    "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+		"build:css": "sass styles.scss styles.css",
+		"watch:css": "sass --watch styles.scss styles.css",
+		"version": "node version-bump.mjs && git add manifest.json versions.json"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "MIT",
+	"devDependencies": {
+		"@types/node": "^16.11.6",
+		"@typescript-eslint/eslint-plugin": "5.29.0",
+		"@typescript-eslint/parser": "5.29.0",
+		"builtin-modules": "3.3.0",
+		"concurrently": "^9.1.2",
+		"esbuild": "0.17.3",
+		"obsidian": "latest",
+		"sass": "^1.83.1",
+		"tslib": "2.4.0",
+		"typescript": "4.7.4"
+	}
+}

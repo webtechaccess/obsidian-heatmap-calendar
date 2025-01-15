@@ -1,0 +1,127 @@
+.clhc .tabs {
+  display: flex;
+}
+.clhc .tabs button {
+  width: 75px;
+  margin: 0;
+  margin-right: 4px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 5px 5px 0 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
+  background-color: var(--background-secondary);
+  color: var(--text-normal);
+  border: 1px solid var(--background-modifier-border);
+  border-bottom: 2px solid var(--background-modifier-border);
+  box-shadow: var(--shadow-s);
+}
+.clhc .tabs button:hover {
+  background-color: var(--background-primary);
+}
+.clhc .tabs button.active {
+  background-color: var(--background-primary);
+  border-bottom: none;
+  box-shadow: none;
+  font-weight: bold;
+}
+.clhc .tab-content {
+  padding: 15px;
+  border-radius: 5px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: var(--background-primary);
+  color: var(--text-normal);
+  border: 1px solid var(--background-modifier-border);
+  border-top: none;
+  box-shadow: var(--shadow-s);
+  flex-grow: 1;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.clhc .tab-content .active {
+  display: block;
+}
+.clhc .setting-item {
+  flex-direction: column-reverse !important;
+  -ms-flex-directionn: column-reverse !important;
+  -webkit-flex-direction: column-reverse !important;
+  border-top: none;
+}
+.clhc .setting-item .setting-item-info {
+  width: 100%;
+  margin-inline-end: unset !important;
+}
+.clhc .setting-item .setting-item-control {
+  justify-content: space-between;
+  width: 100%;
+}
+.clhc .setting-item .setting-item-control div {
+  text-wrap: nowrap;
+}
+.clhc .setting-item .setting-item-control select {
+  width: auto;
+}
+.clhc .setting-item.is-disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.clhc .setting-item.is-disabled .setting-name {
+  color: #777;
+  text-decoration: line-through;
+}
+.clhc .setting-item.is-disabled .setting-description {
+  color: #aaa;
+}
+.clhc .modal {
+  width: 720px;
+  max-width: 100vw;
+  height: 860px;
+  max-height: 90vh;
+  padding: 15px;
+  padding-top: 0;
+  background-color: var(--background-secondary);
+}
+.clhc .modal .modal-title {
+  text-align: center;
+  height: 48px;
+  line-height: 48px;
+}
+.clhc .modal .modal-header {
+  text-align: center;
+  height: 48px;
+  line-height: 48px;
+  padding: 0;
+  margin: 0;
+}
+.clhc .modal .modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.clhc .modal .modal-close-button {
+  width: 48px;
+  height: 48px;
+  line-height: 48px;
+  font-size: 32px;
+  text-align: center;
+  top: 0;
+  right: 0;
+}
+.clhc .modal-bg {
+  background-color: transparent !important;
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .clhc .modal {
+    width: 100%;
+    height: 100%;
+    max-height: 100vh;
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
