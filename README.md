@@ -55,6 +55,9 @@
 2. Navigate to the **Codeless Heatmap Calendar** settings tab.
 3. Configure the plugin using the **Query**, **Style**, **Billable**, and **Stats** tabs to tailor the heatmap to your needs.
 
+![Inserting](doc/images/command-palette.jpg)
+![Configuration](doc/images/settings-style.jpg)
+
 ---
 
 ## Why Choose Codeless Heatmap Calendar?
