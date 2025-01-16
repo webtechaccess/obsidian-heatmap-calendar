@@ -1,3 +1,11 @@
+:root {
+  --clhc-calendar-border-color: initial;
+  --clhc-calendar-border-radius: initial;
+  --clhc-calendar-background: initial;
+  --clhc-modal-position-left: 0;
+  --clhc-modal-position-top: 0;
+}
+
 .clhc .tabs {
   display: flex;
 }
@@ -62,6 +70,9 @@
 .clhc .setting-item .setting-item-control select {
   width: auto;
 }
+.clhc .setting-item .setting-item-control .long {
+  width: 65%;
+}
 .clhc .setting-item.is-disabled {
   opacity: 0.4;
   cursor: not-allowed;
@@ -81,6 +92,9 @@
   padding: 15px;
   padding-top: 0;
   background-color: var(--background-secondary);
+  position: absolute;
+  left: var(--clhc-modal-position-left);
+  top: var(--clhc-modal-position-top);
 }
 .clhc .modal .modal-title {
   text-align: center;
@@ -100,13 +114,10 @@
   align-items: stretch;
 }
 .clhc .modal .modal-close-button {
-  width: 48px;
+  width: 32px;
   height: 48px;
   line-height: 48px;
   font-size: 32px;
-  text-align: center;
-  top: 0;
-  right: 0;
 }
 .clhc .modal-bg {
   background-color: transparent !important;
@@ -122,6 +133,40 @@
     padding: 10px;
     font-size: 14px;
   }
+}
+.clhc-tooltip-canvas {
+  position: absolute;
+  top: 0;
+  pointer-events: none;
+}
+
+.clhc-canvas {
+  display: block;
+  border: 1px solid var(--clhc-calendar-border-color);
+  border-radius: var(--clhc-calendar-border-radius);
+  background: var(--clhc-calendar-background);
+}
+
+.clhc-container-div {
+  position: relative;
+  top: 0;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+.clhc-tab-content {
+  display: none;
+  height: 0;
+}
+.clhc-tab-content.active {
+  display: block;
+  height: 300px;
+}
+
+.clhc-donation-emoji {
+  display: block;
+  text-align: center;
+  font-size: 10rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

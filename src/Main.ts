@@ -131,17 +131,9 @@ export default class Main extends Plugin {
 
 
   render(params) {
-    const div = createEl('div')
-    div.style.position = 'relative'
-    div.innerText = 'Loading...'
-    div.style.top = '0'
-    div.style.margin = '0 auto'
-    div.style.display = 'inline-block'
+    const div = createEl('div', { text: "Loading...", attr: {class: 'clhc-container-div'} })
 
     Main.validate(params)
-
-    //TODO: clear cache when dataprovider and api auth changed
-    //TODO: support more apis
 
     const cacheAlias = params.id + "-" + (params[Config.USE_FAKE_DATA] ? 'fake' : 'toggl')
 
@@ -164,7 +156,6 @@ export default class Main extends Plugin {
     div.addEventListener('click', () => {
       this.openSettings(params)
     })
-
 
     return div
   }

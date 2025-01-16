@@ -1,3 +1,11 @@
+:root {
+  --clhc-calendar-border-color: initial;
+  --clhc-calendar-border-radius: initial;
+  --clhc-calendar-background: initial;
+  --clhc-modal-position-left: 0;
+  --clhc-modal-position-top: 0;
+}
+
 .clhc {
   .tabs {
     display: flex;
@@ -71,6 +79,10 @@
       & select {
         width: auto;
       }
+
+      .long {
+        width: 65%;
+      }
     }
 
     &.is-disabled {
@@ -95,7 +107,12 @@
     max-height: 90vh;
 
     padding: 15px;
+    padding-top: 0;
     background-color: var(--background-secondary);
+
+    position: absolute;
+    left: var(--clhc-modal-position-left);
+    top: var(--clhc-modal-position-top);
 
     .modal-title {
       text-align: center;
@@ -132,6 +149,7 @@
   }
 }
 
+
 @media (max-width: 768px) {
   .clhc {
     .modal {
@@ -142,4 +160,42 @@
       font-size: 14px;
     }
   }
+}
+
+
+.clhc-tooltip-canvas {
+  position: absolute;
+  top: 0;
+  pointer-events: none;
+}
+
+
+.clhc-canvas {
+  display: block;
+  border: 1px solid var(--clhc-calendar-border-color);
+  border-radius: var(--clhc-calendar-border-radius);
+  background: var(--clhc-calendar-background);
+}
+
+.clhc-container-div {
+  position: relative;
+  top: 0;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+.clhc-tab-content {
+  display: none;
+  height: 0;
+
+  &.active {
+    display: block;
+    height: 300px;
+  }
+}
+
+.clhc-donation-emoji {
+  display: block;
+  text-align: center;
+  font-size: 10rem;
 }

@@ -1,4 +1,4 @@
-import {App, Modal, Setting, TextComponent, ValueComponent} from 'obsidian'
+import {App, Modal, Setting} from 'obsidian'
 import {Descriptions, Config, IntensityColors, Phrases} from './Consts'
 import {Dark, Light, Minimal, Vivid} from './Themes'
 import {Canvas} from './Canvas'
@@ -29,10 +29,7 @@ export class Settings extends Modal {
     containerEl.addClass('clhc');
 
     const header = this.titleEl;
-    header.innerHTML = Phrases.SETTINGS_TITLE
-
-    // const headerDescription = this.contentEl.createEl("p");
-    // headerDescription.innerHTML = Phrases.SETTINGS_DESCRIPTION
+    this.setTitle(Phrases.SETTINGS_TITLE)
 
     let params = {}
 
@@ -46,7 +43,9 @@ export class Settings extends Modal {
     for (let i=0; i<this.tabsNames.length; i++) {
       const tab = this.tabContainer.createEl('button', { text: this.tabsNames[i] });
       tab.onclick = () => this.showTab(i);
-      this.tabsContent.push(this.tabContentContainer.createDiv())
+      const tabContent = this.tabContentContainer.createDiv()
+      tabContent.addClass('clhc-tab-content')
+      this.tabsContent.push(tabContent)
     }
 
     let tabQuery = this.tabsContent[0]
@@ -110,8 +109,12 @@ export class Settings extends Modal {
           control.updateValueCore(value)
         })
 
-        if (type.includes("long")) {
-          control.inputEl.style.width = "65%"
+        if (control.inputEl) {
+          if (type.includes("long")) {
+            control.inputEl.addClass('long')
+          } else {
+            control.inputEl.removeClass('long')
+          }
         }
       }
 
@@ -193,9 +196,14 @@ export class Settings extends Modal {
     add(tabStats, "check", Config.SHOW_GENERAL_STATS)
     add(tabStats, "check", Config.SHOW_STREAKS_STATS)
 
-    const donationEl = document.createElement("div");
-    donationEl.innerHTML = "<span style='font-size: 100px; display: block; text-align: center'>💖</span><p>If you’ve enjoyed using this heatmap calendar or found it helpful, consider contributing to its development.</p><p>Your gift will help me improve features, fix bugs, and keep this project alive for the community.</p><p>Every contribution, is greatly appreciated!</p><ul><li>One-Time Donation: <a href='https://buy.stripe.com/00gaEM1lA7yF664fYY'>Donate via Stripe</a></li><li>Monthly Subscription: <a href='https://buy.stripe.com/14kbIQc0ebOVgKI9AB'>Subscribe via Stripe</a></li></ul>"
-    tabDonation.append(donationEl)
+    const tabDonationDiv = tabDonation.createEl('div')
+    tabDonationDiv.createEl('span', { attr: { class: 'clhc-donation-emoji' }, text: '💖'})
+    tabDonationDiv.createEl('h3', { text: 'Every contribution, is greatly appreciated!'})
+    tabDonationDiv.createEl('p', { text: 'If you’ve enjoyed using this heatmap calendar or found it helpful, consider contributing to its development.'})
+    tabDonationDiv.createEl('p', { text: 'Your gift will help me improve features, fix bugs, and keep this project alive for the community.'})
+    const ul = tabDonationDiv.createEl('ul')
+    ul.createEl('li', { text: 'One-Time Donation: ' }).createEl('a', { href: 'https://buy.stripe.com/00gaEM1lA7yF664fYY', text: 'Donate via Stripe'})
+    ul.createEl('li', { text: 'Monthly Subscription: ' }).createEl('a', { href: 'https://buy.stripe.com/14kbIQc0ebOVgKI9AB' , text: 'Subscribe via Stripe'})
 
     this.showTab(0);
 
@@ -206,6 +214,12 @@ export class Settings extends Modal {
   makeMovable(modal: HTMLElement, header: HTMLElement) {
     let isDragging = false;
     let startX = 0, startY = 0, offsetX = 0, offsetY = 0;
+
+    const centerLeft = (window.innerWidth - modal.offsetWidth) / 2;
+    const centerTop = (window.innerHeight - modal.offsetHeight) / 2;
+
+    modal.style.setProperty('--clhc-modal-position-left', `${centerLeft}px`);
+    modal.style.setProperty('--clhc-modal-position-top', `${centerTop}px`);
 
     header.addEventListener('mousedown', (e) => {
       isDragging = true;
@@ -225,9 +239,11 @@ export class Settings extends Modal {
       const newLeft = offsetX + (e.clientX - startX);
       const newTop = offsetY + (e.clientY - startY);
 
-      modal.style.position = 'absolute';
-      modal.style.left = `${newLeft}px`;
-      modal.style.top = `${newTop}px`;
+      const maxLeft = window.innerWidth - modal.offsetWidth;
+      const maxTop = window.innerHeight - modal.offsetHeight;
+
+      modal.style.setProperty('--clhc-modal-position-left', `${Math.min(Math.max(newLeft, 0), maxLeft)}px`);
+      modal.style.setProperty('--clhc-modal-position-top', `${Math.min(Math.max(newTop, 0), maxTop)}px`);
     };
 
     const onMouseUp = () => {
@@ -241,8 +257,6 @@ export class Settings extends Modal {
 
   showTab(index: number) {
     this.tabsContent.forEach(tabContent => {
-      tabContent.style.display = 'none';
-      tabContent.style.height = '0';
       tabContent.classList.remove('active');
     })
 
@@ -253,8 +267,6 @@ export class Settings extends Modal {
     this.tabContainer.querySelector(`button:nth-child(${index+1})`)?.classList.add('active');
 
     let currentTab = this.tabsContent[index]
-    currentTab.style.display = 'block'
-    currentTab.style.height = '300px'
     currentTab.classList.add('active')
   }
 

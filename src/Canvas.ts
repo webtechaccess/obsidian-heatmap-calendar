@@ -37,7 +37,10 @@ export class Canvas {
     existingCanvas.forEach(canvas => canvas.remove())
 
     const canvas = document.createElement('canvas')
+    canvas.addClass('clhc-canvas')
+
     const tooltipCanvas = document.createElement('canvas')
+    tooltipCanvas.addClass('clhc-tooltip-canvas')
 
     const cellSize = params[Config.CELL_SIZE]
     const padding = cellSize / 5
@@ -83,17 +86,13 @@ export class Canvas {
 
     tooltipCanvas.width = canvas.width
     tooltipCanvas.height = canvas.height
-    tooltipCanvas.style.position = 'absolute'
-    tooltipCanvas.style.top = '0'
-    tooltipCanvas.style.pointerEvents = 'none'
 
     if (params[Config.CALENDAR_BORDER_COLOR]) {
-      canvas.style.border = '1px solid ' + params[Config.CALENDAR_BORDER_COLOR]
+      canvas.style.setProperty('--clhc-calendar-border-color', params[Config.CALENDAR_BORDER_COLOR]);
     }
 
-    canvas.style.borderRadius = params[Config.CALENDAR_BORDER_RADIUS] + 'px'
-    canvas.style.background = params[Config.CALENDAR_BACKGROUND]
-    canvas.style.display = 'block'
+    canvas.style.setProperty('--clhc-calendar-border-radius', params[Config.CALENDAR_BORDER_RADIUS] + 'px');
+    canvas.style.setProperty('--clhc-calendar-background', params[Config.CALENDAR_BACKGROUND]);
 
     const ctx = canvas.getContext('2d')
     if (!ctx) return
@@ -145,7 +144,7 @@ export class Canvas {
         })
       }
 
-      div.innerText = ''
+      div.setText('')
       div.appendChild(canvas)
       return
     }
@@ -278,7 +277,7 @@ export class Canvas {
       drawText(str, params[Config.CALENDAR_PADDING], y)
     }
 
-    div.innerText = ''
+    div.setText('')
     div.appendChild(canvas)
     div.appendChild(tooltipCanvas)
 
