@@ -24,7 +24,7 @@ export default class Main extends Plugin {
     );
 
     // @ts-ignore
-    window.ba_heatmap_renderer = (id, params) => {
+    window.clhc_render = (id, params) => {
       params.id = id
       return this.render(params)
     }
@@ -95,7 +95,7 @@ export default class Main extends Plugin {
 
   static generateScript(attributes) {
     let script = '\n\n```dataviewjs\n'
-    script += `dv.paragraph("").appendChild(ba_heatmap_renderer("${attributes.id}", {\n`
+    script += `dv.paragraph("").appendChild(clhc_render("${attributes.id}", {\n`
 
     Object.entries(attributes).forEach(([key, value]) => {
       if (key === 'id') return
