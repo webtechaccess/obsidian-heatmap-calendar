@@ -1,11 +1,3 @@
-:root {
-  --clhc-calendar-border-color: initial;
-  --clhc-calendar-border-radius: initial;
-  --clhc-calendar-background: initial;
-  --clhc-modal-position-left: 0;
-  --clhc-modal-position-top: 0;
-}
-
 .clhc .tabs {
   display: flex;
 }
@@ -93,8 +85,6 @@
   padding-top: 0;
   background-color: var(--background-secondary);
   position: absolute;
-  left: var(--clhc-modal-position-left);
-  top: var(--clhc-modal-position-top);
 }
 .clhc .modal .modal-title {
   text-align: center;
@@ -142,9 +132,6 @@
 
 .clhc-canvas {
   display: block;
-  border: 1px solid var(--clhc-calendar-border-color);
-  border-radius: var(--clhc-calendar-border-radius);
-  background: var(--clhc-calendar-background);
 }
 
 .clhc-container-div {

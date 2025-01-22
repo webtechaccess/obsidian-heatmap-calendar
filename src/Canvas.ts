@@ -41,6 +41,7 @@ export class Canvas {
 
     const tooltipCanvas = document.createElement('canvas')
     tooltipCanvas.addClass('clhc-tooltip-canvas')
+    const tooltipCtx = tooltipCanvas.getContext('2d')
 
     const cellSize = params[Config.CELL_SIZE]
     const padding = cellSize / 5
@@ -86,13 +87,6 @@ export class Canvas {
 
     tooltipCanvas.width = canvas.width
     tooltipCanvas.height = canvas.height
-
-    if (params[Config.CALENDAR_BORDER_COLOR]) {
-      canvas.style.setProperty('--clhc-calendar-border-color', params[Config.CALENDAR_BORDER_COLOR]);
-    }
-
-    canvas.style.setProperty('--clhc-calendar-border-radius', params[Config.CALENDAR_BORDER_RADIUS] + 'px');
-    canvas.style.setProperty('--clhc-calendar-background', params[Config.CALENDAR_BACKGROUND]);
 
     const ctx = canvas.getContext('2d')
     if (!ctx) return
@@ -149,7 +143,36 @@ export class Canvas {
       return
     }
 
-    const tooltipCtx = tooltipCanvas.getContext('2d')
+    const borderRadius = params[Config.CALENDAR_BORDER_RADIUS];
+
+    const width = canvas.width
+    const height = canvas.height
+    const gradient = ctx.createLinearGradient(0, 0, width, height);
+    const background = params[Config.CALENDAR_BACKGROUND]
+
+    const gradient_colors = background.split(',')
+    if (gradient_colors.size === 0) {
+      gradient.addColorStop(0, 'tranparent')
+      gradient.addColorStop(1, 'tranparent')
+    } else if (gradient_colors.length === 1) {
+      const color = Helper.validateColor(gradient_colors[0])
+      gradient.addColorStop(0, color)
+      gradient.addColorStop(1, color)
+    } else {
+      gradient.addColorStop(0, Helper.validateColor(gradient_colors[0]))
+      gradient.addColorStop(1, Helper.validateColor(gradient_colors[1]))
+    }
+
+    ctx.beginPath();
+    ctx.moveTo(borderRadius, 0);
+    ctx.arcTo(width, 0, width, height, borderRadius);
+    ctx.arcTo(width, height, 0, height, borderRadius);
+    ctx.arcTo(0, height, 0, 0, borderRadius);
+    ctx.arcTo(0, 0, width, 0, borderRadius);
+    ctx.closePath();
+
+    ctx.fillStyle = gradient;
+    ctx.fill();
 
     const monthNames = [...Array(12)].map((_, i) => new Date(0, i).toLocaleString('default', {month: 'short'}))
 

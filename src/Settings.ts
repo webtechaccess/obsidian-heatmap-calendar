@@ -170,7 +170,6 @@ export class Settings extends Modal {
 
     add(tabStyle, "long-text", Config.CALENDAR_BACKGROUND)
     add(tabStyle, "color", Config.CALENDAR_TEXT_COLOR)
-    add(tabStyle, "color", Config.CALENDAR_BORDER_COLOR)
     add(tabStyle, "number", Config.CALENDAR_BORDER_RADIUS)
     add(tabStyle, "number", Config.CALENDAR_PADDING)
 
@@ -206,52 +205,6 @@ export class Settings extends Modal {
     ul.createEl('li', { text: 'Monthly Subscription: ' }).createEl('a', { href: 'https://buy.stripe.com/14kbIQc0ebOVgKI9AB' , text: 'Subscribe via Stripe'})
 
     this.showTab(0);
-
-    this.makeMovable(this.modalEl, header);
-  }
-
-
-  makeMovable(modal: HTMLElement, header: HTMLElement) {
-    let isDragging = false;
-    let startX = 0, startY = 0, offsetX = 0, offsetY = 0;
-
-    const centerLeft = (window.innerWidth - modal.offsetWidth) / 2;
-    const centerTop = (window.innerHeight - modal.offsetHeight) / 2;
-
-    modal.style.setProperty('--clhc-modal-position-left', `${centerLeft}px`);
-    modal.style.setProperty('--clhc-modal-position-top', `${centerTop}px`);
-
-    header.addEventListener('mousedown', (e) => {
-      isDragging = true;
-
-      offsetX = modal.offsetLeft;
-      offsetY = modal.offsetTop;
-      startX = e.clientX;
-      startY = e.clientY;
-
-      document.addEventListener('mousemove', onMouseMove);
-      document.addEventListener('mouseup', onMouseUp);
-    });
-
-    const onMouseMove = (e: MouseEvent) => {
-      if (!isDragging) return;
-
-      const newLeft = offsetX + (e.clientX - startX);
-      const newTop = offsetY + (e.clientY - startY);
-
-      const maxLeft = window.innerWidth - modal.offsetWidth;
-      const maxTop = window.innerHeight - modal.offsetHeight;
-
-      modal.style.setProperty('--clhc-modal-position-left', `${Math.min(Math.max(newLeft, 0), maxLeft)}px`);
-      modal.style.setProperty('--clhc-modal-position-top', `${Math.min(Math.max(newTop, 0), maxTop)}px`);
-    };
-
-    const onMouseUp = () => {
-      isDragging = false;
-
-      document.removeEventListener('mousemove', onMouseMove);
-      document.removeEventListener('mouseup', onMouseUp);
-    };
   }
 
 

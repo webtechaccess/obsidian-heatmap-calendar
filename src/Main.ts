@@ -42,7 +42,6 @@ export default class Main extends Plugin {
           [Config.OFF_DAYS]: '[]',
           [Config.THEME]: 'Dark',
 
-          [Config.CALENDAR_BORDER_COLOR]: '',
           [Config.INTENSITY_COLOR]: '#00ff88',
           [Config.PAYED_HOURS]: 0,
           [Config.HOURLY_RATE]: 0,
@@ -61,9 +60,9 @@ export default class Main extends Plugin {
           [Config.CELL_SIZE]: General[Config.CELL_SIZE],
           [Config.LINE_HEIGHT]: General[Config.LINE_HEIGHT],
 
-          [Config.CALENDAR_BACKGROUND]: 'linear-gradient(to bottom right, #111, #272727)',
+          [Config.THEME]: 'dark',
+          [Config.CALENDAR_BACKGROUND]: '#111, #272727',
           [Config.CALENDAR_TEXT_COLOR]: '#ddd',
-          [Config.CALENDAR_BORDER_COLOR]: '#333',
           [Config.NORMAL_DAY_BACKGROUND]: '#444',
           [Config.OFF_DAY_BACKGROUND]: '#2a2a2a',
           [Config.STATISTICS_COLOR]: 'white',

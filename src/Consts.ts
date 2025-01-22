@@ -15,7 +15,6 @@ export enum Config {
 
   CALENDAR_BACKGROUND = 'Calendar Background',
   CALENDAR_TEXT_COLOR = 'Calendar Text Color',
-  CALENDAR_BORDER_COLOR = 'Calendar Border Color',
   CALENDAR_BORDER_RADIUS = 'Calendar Border Radius',
   CALENDAR_PADDING = 'Calendar Padding',
 
@@ -80,9 +79,8 @@ export const Descriptions = {
   [Config.THEME]: 'Select a theme to customize the heatmap calendar’s appearance. Choosing a theme will automatically update related style configurations, such as colors and gradients, affecting how the heatmap is displayed.',
   [Config.FONT]: 'Choose the font style for the heatmap calendar. We recommend Iosevka (included in predefined themes) for its clean and modern design. This affects the text displayed in the calendar, such as dates and labels.',
   [Config.FONT_SIZE]: 'Set the base font size for the heatmap calendar. Adjusting this value will proportionally scale other text elements, such as labels and annotations. Use a number (e.g., 24).',
-  [Config.CALENDAR_BACKGROUND]: 'Set the background of the heatmap calendar. Use named colors (e.g., white), hex codes (e.g., #fff2 for semi-transparency), or gradients. Gradients are prioritized in themes.',
+  [Config.CALENDAR_BACKGROUND]: 'Set the background of the heatmap calendar. Use hex codes (e.g., #fff2 for semi-transparency), or gradients using two values separated by comma.',
   [Config.CALENDAR_TEXT_COLOR]: 'Define the color for text elements, including day names, month names, and the year. Use named colors (e.g., black) or hex codes (e.g., #000000).',
-  [Config.CALENDAR_BORDER_COLOR]: 'Choose the color for the calendar’s border. Use named colors (e.g., gray) or hex codes (e.g., #cccccc).',
   [Config.CALENDAR_BORDER_RADIUS]: 'Adjust the corner radius for the calendar’s border to control its roundedness. Use a number (e.g., 5).',
   [Config.CALENDAR_PADDING]: 'Set the outer spacing around the entire calendar. Use a number (e.g., 10) to control the margin between the calendar and surrounding elements.',
   [Config.TOOLTIP_BACKGROUND]: 'Set the background color for tooltips displayed when hovering over calendar cells. Use named colors (e.g., white), hex codes (e.g., #ffffff), or gradients.',

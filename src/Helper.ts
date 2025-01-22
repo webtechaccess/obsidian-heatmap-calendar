@@ -1,22 +1,33 @@
 import {Config} from './Consts'
 
 export class Helper {
+  static isValidColor(color) {
+    const hexColorRegex = /^#([0-9A-Fa-f]{3,4}|[0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$/;
+    return hexColorRegex.test(color)
+  }
+
+
+  static validateColor(color) {
+    return Helper.isValidColor(color.trim()) ? color.trim() : 'transparent';
+  }
+
+
   static fixLength(str: string, length: number): string {
-    return str.padEnd(length, ' ');
+    return str.padEnd(length, ' ')
   }
 
 
   static computeFont(params, size: number): string {
-    return (size / 12) * params[Config.FONT_SIZE] + "px " + params[Config.FONT]
+    return (size / 12) * params[Config.FONT_SIZE] + 'px ' + params[Config.FONT]
   }
 
 
   static isNumber(str: string): boolean {
     if (typeof str !== 'string' || str.trim() === '') {
-      return false;
+      return false
     }
 
-    return !isNaN(parseFloat(str));
+    return !isNaN(parseFloat(str))
   }
 
 
@@ -32,14 +43,14 @@ export class Helper {
 
 
   static generateHex(length: number): string {
-    const characters = '0123456789abcdef';
-    let result = '';
+    const characters = '0123456789abcdef'
+    let result = ''
 
     for (let i = 0; i < length; i++) {
-      result += characters.charAt(Math.floor(Math.random() * characters.length));
+      result += characters.charAt(Math.floor(Math.random() * characters.length))
     }
 
-    return result;
+    return result
   }
 
 
@@ -50,25 +61,25 @@ export class Helper {
 
 
   static getColor(params, value: number, max: number): string {
-    const minValue = 75;
-    const intensity = Math.floor(((value / max) * (255 - minValue)) + minValue);
+    const minValue = 75
+    const intensity = Math.floor(((value / max) * (255 - minValue)) + minValue)
 
-    const maxIntensityColor = params[Config.INTENSITY_COLOR];
+    const maxIntensityColor = params[Config.INTENSITY_COLOR]
 
     const hexToRgb = (hex) => {
-      const r = parseInt(hex.slice(1, 3), 16);
-      const g = parseInt(hex.slice(3, 5), 16);
-      const b = parseInt(hex.slice(5, 7), 16);
-      return { r, g, b };
-    };
+      const r = parseInt(hex.slice(1, 3), 16)
+      const g = parseInt(hex.slice(3, 5), 16)
+      const b = parseInt(hex.slice(5, 7), 16)
+      return {r, g, b}
+    }
 
     const computeLowerIntensity = (color, intensity) => {
-      const { r, g, b } = hexToRgb(color);
-      const scale = intensity / 255; // Scale factor based on intensity
-      return `rgb(${Math.floor(r * scale)}, ${Math.floor(g * scale)}, ${Math.floor(b * scale)})`;
-    };
+      const {r, g, b} = hexToRgb(color)
+      const scale = intensity / 255 // Scale factor based on intensity
+      return `rgb(${Math.floor(r * scale)}, ${Math.floor(g * scale)}, ${Math.floor(b * scale)})`
+    }
 
-    return computeLowerIntensity(maxIntensityColor, intensity);
+    return computeLowerIntensity(maxIntensityColor, intensity)
   }
 
 

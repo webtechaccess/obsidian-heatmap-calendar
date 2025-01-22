@@ -17,9 +17,8 @@ export const Dark = {
   [Config.CELL_SIZE]: General[Config.CELL_SIZE],
   [Config.LINE_HEIGHT]: General[Config.LINE_HEIGHT],
 
-  [Config.CALENDAR_BACKGROUND]: 'linear-gradient(to bottom right, #111, #272727)',
+  [Config.CALENDAR_BACKGROUND]: '#111, #272727',
   [Config.CALENDAR_TEXT_COLOR]: '#ddd',
-  [Config.CALENDAR_BORDER_COLOR]: '#333',
   [Config.NORMAL_DAY_BACKGROUND]: '#444',
   [Config.OFF_DAY_BACKGROUND]: '#2a2a2a',
   [Config.STATISTICS_COLOR]: 'white',
@@ -36,9 +35,8 @@ export const Light = {
   [Config.CELL_SIZE]: General[Config.CELL_SIZE],
   [Config.LINE_HEIGHT]: General[Config.LINE_HEIGHT],
 
-  [Config.CALENDAR_BACKGROUND]: 'linear-gradient(to bottom right, #eee, #f7f7f7)',
+  [Config.CALENDAR_BACKGROUND]: '#eee, #f7f7f7',
   [Config.CALENDAR_TEXT_COLOR]: '#333',
-  [Config.CALENDAR_BORDER_COLOR]: '#ddd',
   [Config.NORMAL_DAY_BACKGROUND]: '#ccc',
   [Config.OFF_DAY_BACKGROUND]: '#e4e4e4',
   [Config.STATISTICS_COLOR]: 'black',
@@ -55,9 +53,8 @@ export const Vivid = {
   [Config.CELL_SIZE]: General[Config.CELL_SIZE],
   [Config.LINE_HEIGHT]: General[Config.LINE_HEIGHT],
 
-  [Config.CALENDAR_BACKGROUND]: 'linear-gradient(to bottom right, #822, #228)',
+  [Config.CALENDAR_BACKGROUND]: '#822, #228',
   [Config.CALENDAR_TEXT_COLOR]: '#ccc',
-  [Config.CALENDAR_BORDER_COLOR]: '#888',
   [Config.NORMAL_DAY_BACKGROUND]: '#fff4',
   [Config.OFF_DAY_BACKGROUND]: '#faa2',
   [Config.STATISTICS_COLOR]: '#ddf',
@@ -74,9 +71,8 @@ export const Minimal = {
   [Config.CELL_SIZE]: 6,
   [Config.LINE_HEIGHT]: 0,
 
-  [Config.CALENDAR_BACKGROUND]: '',
+  [Config.CALENDAR_BACKGROUND]: 'transparent',
   [Config.CALENDAR_TEXT_COLOR]: '',
-  [Config.CALENDAR_BORDER_COLOR]: '',
   [Config.NORMAL_DAY_BACKGROUND]: '#8886',
   [Config.OFF_DAY_BACKGROUND]: '#8883',
   [Config.STATISTICS_COLOR]: '',
