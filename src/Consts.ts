@@ -1,46 +1,46 @@
 export enum Config {
-  TOGGL_API_AUTH = 'Toggl API Auth',
-  TOGGL_WORKSPACE_ID = 'Toggl Workspace ID',
-  TOGGL_PROJECT_IDS = 'Toggl Project IDs',
+  TOGGL_API_AUTH = 'Toggl API auth',
+  TOGGL_WORKSPACE_ID = 'Toggl workspace ID',
+  TOGGL_PROJECT_IDS = 'Toggl project IDs',
 
-  USE_FAKE_DATA = 'Use Fake Data',
+  USE_FAKE_DATA = 'Use fake data',
   YEAR = 'Year',
 
-  OFF_DAYS = 'Off Days',
+  OFF_DAYS = 'Off days',
 
   THEME = 'Theme',
 
   FONT = 'Font',
-  FONT_SIZE = 'Font Size',
+  FONT_SIZE = 'Font size',
 
-  CALENDAR_BACKGROUND = 'Calendar Background',
-  CALENDAR_TEXT_COLOR = 'Calendar Text Color',
-  CALENDAR_BORDER_RADIUS = 'Calendar Border Radius',
-  CALENDAR_PADDING = 'Calendar Padding',
+  CALENDAR_BACKGROUND = 'Calendar background',
+  CALENDAR_TEXT_COLOR = 'Calendar text color',
+  CALENDAR_BORDER_RADIUS = 'Calendar border radius',
+  CALENDAR_PADDING = 'Calendar padding',
 
-  TOOLTIP_BACKGROUND = 'Tooltip Background',
-  TOOLTIP_TEXT_COLOR = 'Tooltip Text Color',
+  TOOLTIP_BACKGROUND = 'Tooltip background',
+  TOOLTIP_TEXT_COLOR = 'Tooltip text color',
 
-  NORMAL_DAY_BACKGROUND = 'Normal Day Background',
-  OFF_DAY_BACKGROUND = 'Off Day Background',
-  INTENSITY_COLOR = 'Intensity Color',
+  NORMAL_DAY_BACKGROUND = 'Normal day background',
+  OFF_DAY_BACKGROUND = 'Off day background',
+  INTENSITY_COLOR = 'Intensity color',
 
-  STATISTICS_COLOR = 'Statistics Color',
-  BILLABLE_REPORT_COLOR = 'Billable Report Color',
+  STATISTICS_COLOR = 'Statistics color',
+  BILLABLE_REPORT_COLOR = 'Billable report color',
 
-  PAYED_HOURS = 'Payed Hours',
-  HOURLY_RATE = 'Hourly Rate',
-  HOURLY_RATE_CURRENCY = 'Hourly Rate Currency',
-  CONVERSION_FEE = 'Conversion Fee',
-  CONVERSION_CURRENCY = 'Conversion Currency',
+  PAYED_HOURS = 'Payed hours',
+  HOURLY_RATE = 'Hourly rate',
+  HOURLY_RATE_CURRENCY = 'Hourly rate currency',
+  CONVERSION_FEE = 'Conversion fee',
+  CONVERSION_CURRENCY = 'Conversion currency',
 
-  CELL_SIZE = 'Cell Size',
+  CELL_SIZE = 'Cell size',
 
-  LINE_HEIGHT = 'Line Height',
+  LINE_HEIGHT = 'Line height',
 
-  SHOW_GENERAL_STATS = 'Show General Statistics',
-  SHOW_STREAKS_STATS = 'Show Streaks Statistics',
-  SHOW_BILLABLE_STATS = 'Show Billable Information',
+  SHOW_GENERAL_STATS = 'Show general statistics',
+  SHOW_STREAKS_STATS = 'Show streaks statistics',
+  SHOW_BILLABLE_STATS = 'Show billable information',
 }
 
 

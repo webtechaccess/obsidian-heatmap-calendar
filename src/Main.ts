@@ -74,21 +74,12 @@ export default class Main extends Plugin {
         initialParams['id'] = Helper.generateHex(32)
 
         const script = Main.generateScript(initialParams)
-        const editor = this.getActiveEditor()
+        const editor = this.app.workspace.activeEditor.editor
         editor.replaceRange(script, editor.getCursor())
 
         this.openSettings(initialParams)
       },
     })
-  }
-
-
-  getActiveEditor(): Editor | null {
-    const activeLeaf = this.app.workspace.activeLeaf
-    if (activeLeaf?.view instanceof MarkdownView) {
-      return activeLeaf.view.editor
-    }
-    return null
   }
 
 
